@@ -18,7 +18,7 @@ namespace GestiónRecursosHumanos
         {
             if (_conexion == null)
             {
-                string cadenaConexion = "Server=TU_SERVIDOR;Database=GestionRecursosHumanos;Integrated Security=True;";
+                string cadenaConexion = System.Configuration.ConfigurationManager.ConnectionStrings["GRHConnection"].ConnectionString;
                 _conexion = new SqlConnection(cadenaConexion);
             }
             return _conexion;
